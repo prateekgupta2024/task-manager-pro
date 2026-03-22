@@ -1,6 +1,6 @@
 # 🚀 Task Manager Pro
 
-A fully-featured and modern Task Manager application built with React, designed to help users efficiently manage their daily tasks with persistence, filtering, and a clean user experience.
+A feature-rich and modern Task Manager application built using React, designed to efficiently manage daily tasks with advanced features like priority handling, sorting, filtering, and persistent storage.
 
 ---
 
@@ -12,13 +12,18 @@ A fully-featured and modern Task Manager application built with React, designed 
 
 ## ✨ Features
 
-* ✅ Add, edit, and delete tasks
+* ✅ Add, edit, and delete tasks (Full CRUD)
 * 📌 Mark tasks as completed / pending
-* 🔍 Filter tasks (All / Completed / Pending)
-* 💾 Persistent data using LocalStorage
-* ✏️ Inline editing for better UX
-* 🎯 Clean and responsive UI
+* 🎯 Task Priority System (Low / Medium / High)
+* 🎨 Color-coded priority badges
+* 🔍 Real-time search functionality
+* 🧩 Filter tasks (All / Completed / Pending)
+* 🔃 Sort tasks by priority
+* 📊 Dashboard (Total, Completed, Pending, High priority count)
+* 💾 Persistent data using LocalStorage (Custom Hook)
+* ✏️ Inline editing with priority update
 * ⚡ Fast performance with Vite
+* 🧱 Clean component-based architecture
 
 ---
 
@@ -26,11 +31,13 @@ A fully-featured and modern Task Manager application built with React, designed 
 
 * React Functional Components
 * React Hooks (`useState`, `useEffect`)
-* State management
+* Custom Hooks (`useLocalStorage`)
+* State management & derived state
 * Conditional rendering
 * Event handling
-* LocalStorage integration
+* Array methods (`map`, `filter`, `sort`)
 * Component-based architecture
+* Dynamic styling (priority-based UI)
 
 ---
 
@@ -72,11 +79,11 @@ npm run dev
 * 📱 Improved mobile responsiveness
 * 🎬 Animations (Framer Motion)
 * 🔐 Backend integration (Node.js + Express)
+* 👤 User authentication
+* ☁️ Cloud storage (Firebase / MongoDB)
 
 ---
 
 ## 👨‍💻 Author
 
 * Prateek Gupta
-
----
