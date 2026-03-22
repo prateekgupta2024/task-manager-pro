@@ -6,6 +6,8 @@ function TaskList({
   editTaskId,
   editText,
   setEditText,
+  editPriority,
+  setEditPriority,
   saveEdit,
   cancelEdit,
 }) {
@@ -19,12 +21,24 @@ function TaskList({
         <li key={task.id} className="task-item">
           {editTaskId === task.id ? (
             <>
-              <input
-                type="text"
-                value={editText}
-                onChange={(e) => setEditText(e.target.value)}
-                className="task-input edit-input"
-              />
+              <div className="task-main">
+                <input
+                  type="text"
+                  value={editText}
+                  onChange={(e) => setEditText(e.target.value)}
+                  className="task-input edit-input"
+                />
+
+                <select
+                  value={editPriority}
+                  onChange={(e) => setEditPriority(e.target.value)}
+                  className="task-input edit-select"
+                >
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
 
               <div className="task-actions">
                 <button onClick={saveEdit} className="save-btn">
@@ -37,13 +51,19 @@ function TaskList({
             </>
           ) : (
             <>
-              <span
-                className={task.completed ? "task-text completed" : "task-text"}
-                onClick={() => toggleTask(task.id)}
-                title="Click to mark complete/incomplete"
-              >
-                {task.text}
-              </span>
+              <div className="task-main">
+                <span
+                  className={task.completed ? "task-text completed" : "task-text"}
+                  onClick={() => toggleTask(task.id)}
+                  title="Click to mark complete/incomplete"
+                >
+                  {task.text}
+                </span>
+
+                <span className={`priority-badge ${task.priority}`}>
+                  {task.priority}
+                </span>
+              </div>
 
               <div className="task-actions">
                 <button onClick={() => startEdit(task.id)} className="edit-btn">

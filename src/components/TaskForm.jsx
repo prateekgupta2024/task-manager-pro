@@ -1,4 +1,4 @@
-function TaskForm({ input, setInput, addTask }) {
+function TaskForm({ input, setInput, addTask, priority, setPriority }) {
   function handleKeyDown(e) {
     if (e.key === "Enter") {
       addTask();
@@ -15,6 +15,16 @@ function TaskForm({ input, setInput, addTask }) {
         onKeyDown={handleKeyDown}
         className="task-input"
       />
+
+      <select
+        value={priority}
+        onChange={(e) => setPriority(e.target.value)}
+        className="task-input priority-select"
+      >
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
 
       <button onClick={addTask} className="add-btn">
         Add Task
